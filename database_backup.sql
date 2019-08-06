@@ -140,7 +140,11 @@ ALTER TABLE ONLY public.songs ALTER COLUMN id SET DEFAULT nextval('public.songs_
 COPY public.albums (id, name, year, created_at, updated_at, genre) FROM stdin;
 2	Giant Steps	\N	2019-08-05 16:54:04.229882	2019-08-05 16:54:04.229882	\N
 1	In Rainbows	1980	2019-08-05 16:52:34.842083	2019-08-05 18:23:47.606067	\N
-3	foo	\N	2019-08-05 20:09:23.722701	2019-08-05 20:09:23.722701	bar
+7	This 	\N	2019-08-06 16:15:45.27112	2019-08-06 16:15:45.27112	pop
+6	Yellow Submarine	1969	2019-08-06 16:01:23.239547	2019-08-06 16:16:19.487966	pop
+5	Something New	1964	2019-08-06 16:00:38.039818	2019-08-06 16:16:25.927338	pop
+3	Foo	\N	2019-08-05 20:09:23.722701	2019-08-06 16:16:30.759035	bar
+8	Dookie	\N	2019-08-06 16:25:15.672435	2019-08-06 16:25:26.335253	Punk
 \.
 
 
@@ -172,10 +176,12 @@ COPY public.schema_migrations (version) FROM stdin;
 COPY public.songs (id, name, lyrics, album_id, created_at, updated_at) FROM stdin;
 1	Reckoner	\N	1	2019-08-05 16:56:27.166412	2019-08-05 16:56:27.166412
 4	Song2	La la ba ba ba	2	2019-08-05 20:12:12.852558	2019-08-05 20:12:12.852558
-5	a	lalallalal	1	2019-08-05 20:20:15.004042	2019-08-05 20:20:15.004042
 6	song 10	\N	1	2019-08-05 20:22:15.034333	2019-08-05 20:22:15.034333
 7	Song3	fjkdls fkjsaljfdskl	2	2019-08-05 20:24:15.700567	2019-08-05 20:24:15.700567
 9	asdf	fsaf	2	2019-08-05 20:45:53.621609	2019-08-05 20:45:53.621609
+10	dust in the wind	I close my eyes, only for a moment, and the moment's gone\r\nAll my dreams pass before my eyes, a curiosity\r\nDust in the wind\r\nAll they are is dust in the wind\r\nSame old song, just a drop of water in an endless sea\r\nAll we do crumbles to the ground though we refuse to see\r\nDust in the wind\r\nAll we are is dust in the wind\r\nOh, ho, ho\r\nNow, don't hang on, nothing lasts forever but the earth and sky\r\nIt slips away\r\nAnd all your money won't another minute buy\r\nDust in the wind\r\nAll we are is dust in the wind\r\nAll we are is dust in the wind\r\nDust in the wind\r\nEverything is dust in the wind\r\nEverything is dust in the wind\r\nThe wind	2	2019-08-06 15:28:43.201254	2019-08-06 15:29:16.578336
+5	Sisters of Mercy	All the sisters of mercy, they are not departed or gone\r\nThey were waiting for me when I thought that I just can't go on\r\nAnd they brought me their comfort and later they brought me this song\r\nOh, I hope you run into them, you who've been travelling so long\r\nYes, you who must leave everything that you cannot control\r\nIt begins with your family, but soon it comes around to your soul\r\nWell, I've been where you're hanging, I think I can see how you're pinned\r\nWhen you're not feeling holy, your loneliness says that you've sinned\r\nWell, they lay down beside me, I made my confession to them\r\nThey touched both my eyes and I touched the dew on their hem\r\nIf your life is a leaf that the seasons tear off and condemn\r\nThey will bind you with love that is graceful and green as a stem\r\nWhen I left they were sleeping, I hope you run into them soon\r\nDon't turn on the lights, you can read their address by the moon\r\nAnd you won't make me jealous if I hear that they sweetened your night\r\nWe weren't lovers like that and besides, it would still be all right\r\nWe weren't lovers like that and besides, it would still be all right	1	2019-08-05 20:20:15.004042	2019-08-06 15:31:04.673556
+11	She	She \r\nShe screams in silence A sulley roit penetrating through her mind Waiting for a sign to smash the silence with the brick of self control Are you locked up in a world that's been planned out for you? Are you feeling like a social tool without a use? Scream at me until my ears bleed I'm taking heed just for you She She's figured out  All her doubts were someone else's point of view Waking up this time to smash the silence with the brick of self control Are you locked up in a world that's been planned out for you? Are you feeling like a social tool without a use? Scream at me until my ears bleed I'm taking heed just for you Are you locked up in a world that's been planned out for you? Are you feeling like a social tool without a use? Scream at me until my ears bleed I'm taking heed just for you	8	2019-08-06 16:27:51.753857	2019-08-06 16:28:04.497808
 \.
 
 
@@ -183,14 +189,14 @@ COPY public.songs (id, name, lyrics, album_id, created_at, updated_at) FROM stdi
 -- Name: albums_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('public.albums_id_seq', 3, true);
+SELECT pg_catalog.setval('public.albums_id_seq', 8, true);
 
 
 --
 -- Name: songs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('public.songs_id_seq', 9, true);
+SELECT pg_catalog.setval('public.songs_id_seq', 11, true);
 
 
 --
